@@ -1,0 +1,106 @@
+// ==========================================================================
+// Mixins other
+// ==========================================================================
+
+//
+// Section primary, secondary
+// --------------------------------------------------------------------------
+
+// repeating properties
+$section-primary-size: (
+  border-radius: px-to-rem(12px),
+);
+
+$section-primary-color: (
+  background-color: $color-gray-quaternary,
+);
+
+$section-secondary-size: (
+  border-radius: px-to-rem(6px),
+);
+
+$section-secondary-color: (
+  background-color: $color-white,
+);
+
+@mixin section-size($properties) {
+  border-radius: map-get($properties, border-radius);
+}
+
+@mixin section-color($properties) {
+  background-color: map-get($properties, background-color);
+}
+
+// section primary (gray-quaternary)
+@mixin section-primary-size-l {
+  @include section-size($section-primary-size);
+
+  margin-bottom: px-to-rem(16px);
+  padding: px-to-rem(16px);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@mixin section-primary-size-m() {
+  @include section-size($section-primary-size);
+
+  margin-bottom: px-to-rem(8px);
+  padding: px-to-rem(8px);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@mixin section-primary-color() {
+  @include section-color($section-primary-color);
+}
+
+@mixin section-primary() {
+  @include section-size($section-primary-size);
+  @include section-color($section-primary-color);
+
+  margin-bottom: px-to-rem(16px);
+  padding: px-to-rem(16px);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include media-breakpoint-down(md) {
+    margin-bottom: px-to-rem(8px);
+    padding: px-to-rem(8px);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// section secondary (white)
+@mixin section-secondary-size-l {
+  @include section-size($section-secondary-size);
+  padding: px-to-rem(16px);
+}
+
+@mixin section-secondary-size-m() {
+  @include section-size($section-secondary-size);
+  padding: px-to-rem(12px);
+}
+
+@mixin section-secondary-color() {
+  @include section-color($section-secondary-color);
+}
+
+@mixin section-secondary() {
+  @include section-size($section-secondary-size);
+  @include section-color($section-secondary-color);
+
+  padding: px-to-rem(16px);
+
+  @include media-breakpoint-down(md) {
+    padding: px-to-rem(12px);
+  }
+}

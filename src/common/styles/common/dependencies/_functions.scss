@@ -1,0 +1,18 @@
+//
+// Size properties
+// --------------------------------------------------------------------------
+@function prop-filter($p, $important) {
+  @return if($p, $p $important, null);
+}
+
+//
+// Unit transform
+// --------------------------------------------------------------------------
+@function px-to-rem($size, $font-size: $default-font-size) {
+  @return ($size / $font-size) * 1rem;
+}
+
+//
+// Other
+// --------------------------------------------------------------------------
+

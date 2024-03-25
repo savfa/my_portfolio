@@ -1,0 +1,62 @@
+/* ==========================================================================
+   Common -- base
+   ========================================================================== */
+
+html {
+  //@include media-breakpoint-down(lg) {}
+
+  display: flex;
+  box-sizing: border-box;
+  min-height: 100%;
+  font-size: $default-font-size;
+}
+
+* {
+  min-height: 0;
+  min-width: 0;
+  font-family: $body-font-family !important;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  min-width: map-get($container-max-widths, xs);
+  min-height: 100%;
+  color: $body-color;
+  font-size: $body-font-size;
+  font-smooth: antialiased;
+  background-color: $body-bg;
+  box-sizing: border-box;
+
+  &.overlay {
+    overflow-y: hidden;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 900;
+      width: 100vw;
+      height: 100%;
+      content: "";
+      background-color: $overlay-bg-primary;
+    }
+  }
+
+  #root {
+    min-height: 100%;
+    height: 100%;
+  }
+
+  .b24-widget-button-wrapper, .button-bitrix-form {
+    display: none !important;
+  }
+}

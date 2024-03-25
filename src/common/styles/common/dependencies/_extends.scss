@@ -1,0 +1,145 @@
+// =============================================================================
+// Extends
+// =============================================================================
+
+//
+// transition
+// --------------------------------------------------------------------------
+
+%transition-primary {
+  transition: $transition-primary;
+}
+
+%transition-secondary {
+  transition: $transition-secondary;
+}
+
+//
+// mark-notice
+// --------------------------------------------------------------------------
+
+%mark-notice {
+
+  &::after {
+    position: absolute;
+    width: px-to-rem(8px);
+    height: px-to-rem(8px);
+    background-color: $color-orange-primary;
+    border-radius: 50%;
+    content: "";
+  }
+}
+
+//
+// overlay
+// --------------------------------------------------------------------------
+
+%overlay-primary {
+  background-color: $overlay-bg-primary !important;
+}
+
+//
+// box-shadow
+// --------------------------------------------------------------------------
+
+%box-shadow-primary {
+  box-shadow: 0 px-to-rem(20px) px-to-rem(100px) px-to-rem(40px) rgba($color-blue-dark-primary, 0.1);
+}
+
+
+//
+// position
+// --------------------------------------------------------------------------
+
+%sticky-fixed {
+  position: sticky;
+  z-index: 890;
+}
+
+
+//
+// fonts
+// --------------------------------------------------------------------------
+
+// font-weight
+%font-weight-light-300 {
+  font-weight: 300;
+}
+
+%font-weight-normal-400 {
+  font-weight: 400;
+}
+
+%font-weight-medium-500 {
+  font-weight: 500;
+}
+
+%font-weight-semiBold-600 {
+  font-weight: 600;
+}
+
+%font-weight-bold-700 {
+  font-weight: 700;
+}
+
+%font-weight-extraBold-800 {
+  font-weight: 800;
+}
+
+%font-weight-black-900 {
+  font-weight: 900;
+}
+
+// data-font-weight
+%data-font-weight-light-300 {
+  &[data-weight="light"] {
+    @extend %font-weight-light-300;
+  }
+}
+
+%data-font-weight-normal-400 {
+  &[data-weight="normal"] {
+    @extend %font-weight-normal-400;
+  }
+}
+
+%data-font-weight-medium-500 {
+  &[data-weight="medium"] {
+    @extend %font-weight-medium-500;
+  }
+}
+
+%data-font-weight-semiBold-600 {
+  &[data-weight="semiBold"] {
+    @extend %font-weight-semiBold-600;
+  }
+}
+
+%data-font-weight-bold-700 {
+  &[data-weight="bold"] {
+    @extend %font-weight-bold-700;
+  }
+}
+
+%data-font-weight-extraBold-800 {
+  &[data-weight="extraBold"] {
+    @extend %font-weight-extraBold-800;
+  }
+}
+
+%data-font-weight-black-900 {
+  &[data-weight="black"] {
+    @extend %font-weight-black-900;
+  }
+}
+
+// data-font-weight-group
+%data-font-weight-group {
+  @extend %data-font-weight-light-300;
+  @extend %data-font-weight-normal-400;
+  @extend %data-font-weight-medium-500;
+  @extend %data-font-weight-semiBold-600;
+  @extend %data-font-weight-bold-700;
+  @extend %data-font-weight-extraBold-800;
+  @extend %data-font-weight-black-900;
+}
