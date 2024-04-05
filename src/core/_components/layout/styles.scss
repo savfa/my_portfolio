@@ -1,0 +1,78 @@
+@import "../../../common/styles/dependencies";
+
+/* ==========================================================================
+   Components -- Layout
+   ========================================================================== */
+
+.layout {
+  $root: &;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: map-get($container-max-widths, xs);
+  height: 100%;
+  color: var(--color-tertiary);
+
+  &__container {
+    @include make-container();
+    //@include make-container-with-sides();
+    //@include make-container-with-sides-max-widths();
+
+    height: inherit;
+  }
+
+  &__row {
+    @include make-row();
+
+    flex-wrap: nowrap;
+    height: inherit;
+  }
+
+  &__col {
+    @include make-col-ready();
+
+    height: inherit;
+  }
+
+  //&__base-container {
+  //  @include make-container();
+  //  //@include make-container-with-sides();
+  //  //@include make-container-with-sides-max-widths();
+  //}
+
+  &__base {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: var(--color-primary);
+    height: inherit;
+  }
+
+  &__header {
+    @extend %sticky-fixed;
+
+    line-height: 0;
+    top: 0;
+  }
+
+  &__main {
+    flex-grow: 1;
+  }
+
+  &__footer {
+
+  }
+
+  //&__add {
+  //
+  //}
+
+  //&__section {
+  //  min-height: auto;
+  //}
+
+  //&__headline {
+  //
+  //}
+}
