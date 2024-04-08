@@ -67,14 +67,16 @@ $color-pink-quaternary:         #dc396b;
 :root {
   --color-primary: #{$color-blue-dark-primary};
   --color-secondary: #{$color-green-secondary};
-  --color-tertiary: #{$color-white};
+  --color-tertiary: #{$color-gray-primary};
+  --color-quinary: #{$color-blue-dark-secondary};
   --shadow: 0 3px 15px rgba(0,0,0,.3);
 }
 
-.theme-pink {
+.theme-lite {
   --color-primary: #{$color-white};
-  --color-secondary: #{$color-pink-secondary};
-  --color-tertiary: #{$color-blue-dark-secondary};
+  --color-secondary: #{#eedbbf};
+  --color-tertiary: #{$color-white};
+  --color-quinary: #{$color-blue-dark-secondary};
   --shadow: none;
 }
 
@@ -114,7 +116,7 @@ $enable-grid-classes: false;
 $grid-columns-12: 12;
 $grid-columns-6: 6;
 $grid-columns: $grid-columns-12;
-$grid-gutter-width: 0px;
+$grid-gutter-width: 64px;
 $grid-gutter-width-small: 0px;
 $grid-side-width: 0px;
 

@@ -1,0 +1,7 @@
+- var navigations = [ { id: 'nav-main', icon: 'fa-home' }, { id: 'nav-about', icon: 'fa-user' }, { id: 'nav-portfolio', icon: 'fa-briefcase' }, { id: 'nav-blogs', icon: 'fa-newspaper' }, { id: 'nav-contacts', icon: 'fa-envelope-open' }];
+
+nav.main-nav
+    ul.main-nav__list
+      each item, index in navigations
+          li(class="main-nav__item" + (index==0 ? " active" : ""))(id=item.id)
+                i.fas(class=item.icon)

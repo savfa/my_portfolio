@@ -7,13 +7,33 @@
 .main {
   $root: &;
 
-  height: 100%;
+  display: none; // .active - flex
+  flex-wrap: wrap;
+  min-height: 100vh;
+
+  &.active {
+    @extend %section-active;
+  }
 
   &__image-wrap {
+    @include media-breakpoint-down(xl) {
+      flex-basis: 100%;
+      order: 1;
+      justify-content: center;
+
+      #{$root}__polygon {
+        display: none;
+      }
+
+      #{$root}__image {
+        padding-left: 0!important;
+      }
+    }
+
     display: flex;
+    flex: 1 0 50%;
     align-items: center;
     position: relative;
-    height: 100%;
 
     #{$root}__polygon {
       transition: all .4s ease-in-out;
@@ -21,15 +41,15 @@
       height: 100%;
       background-color: var(--color-secondary);
       position: absolute;
-      left: 0;
+      left: -32px;
       top: 0;
       clip-path: polygon(0 0, 46% 0, 79% 100%, 0% 100%);
     }
 
     #{$root}__image {
       height: 90%;
-      width: 68%;
-      margin-left: px-to-rem(64px);
+      width: 70%;
+      padding-left: px-to-rem(32px);
       transition: all .4s ease-in-out;
 
       img {
@@ -47,25 +67,44 @@
     }
   }
 
-  &__content {
-    width: 70%;
-    height: 100%;
+  &__content-wrap {
+    flex: 1 0 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-right: px-to-rem(32px);
 
-    &-name {
-      font-size: 3rem;
+    @include media-breakpoint-down(xl) {
+      padding-right: 0;
 
-      span {
-        color: var(--color-secondary);
+      #{$root}__content {
+        width: 100% !important;
+
+        &-name, &-desc {
+          text-align: center;
+        }
+
+        .button-primary {
+          margin: auto;
+        }
       }
     }
 
-    &-desc {
-      margin: 1.5rem 0;
-      line-height: 2rem;
+    #{$root}__content {
+      width: 70%;
+
+      &-name {
+        font-size: 3rem;
+
+        span {
+          color: var(--color-secondary);
+        }
+      }
+
+      &-desc {
+        margin: 1.5rem 0;
+        line-height: 2rem;
+      }
     }
   }
-
 }
