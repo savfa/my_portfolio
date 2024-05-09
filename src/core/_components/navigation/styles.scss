@@ -38,7 +38,7 @@
       justify-content: center;
       align-items: center;
       font-size: 1.2rem;
-      color: var(--color-tertiary);
+      color: $color-white;
       pointer-events: none;
     }
 
@@ -46,7 +46,7 @@
       background-color: var(--color-secondary);
       transition: all .4s ease-in-out;
       i {
-        color: var(--color-white);
+        //color: var(--color-quinary);
       }
     }
   }

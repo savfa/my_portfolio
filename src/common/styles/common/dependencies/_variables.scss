@@ -44,6 +44,7 @@ $color-azure-secondary:         #09A8DA;
 $color-azure-tertiary:          #0897C4;
 $color-azure-quaternary:        #0788B0;
 $color-azure-quinary:           #077B9F;
+$color-blue:                    #2e3d82;
 
 $color-velvet-primary:          #AE6EE1;
 $color-velvet-secondary:        #9D63CB;
@@ -66,18 +67,20 @@ $color-pink-quaternary:         #dc396b;
 // theme variables
 :root {
   --color-primary: #{$color-blue-dark-primary};
-  --color-secondary: #{$color-green-secondary};
-  --color-tertiary: #{$color-gray-primary};
+  --color-secondary: #{$color-blue};
+  --color-tertiary: #{$color-white};
+  --color-quaternary: #{$color-blue-dark-secondary};
   --color-quinary: #{$color-blue-dark-secondary};
-  --shadow: 0 3px 15px rgba(0,0,0,.3);
+  --shadow: none;
 }
 
 .theme-lite {
   --color-primary: #{$color-white};
   --color-secondary: #{#eedbbf};
-  --color-tertiary: #{$color-white};
+  --color-tertiary: #{$color-gray-primary};
+  --color-quaternary: #{$color-gray-tertiary};
   --color-quinary: #{$color-blue-dark-secondary};
-  --shadow: none;
+  --shadow: 0 3px 15px rgba(0,0,0,.3);
 }
 
 //

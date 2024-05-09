@@ -68,9 +68,21 @@
   //
   //}
 
-  //&__section {
-  //  min-height: auto;
-  //}
+  &__section {
+    display: none;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    padding: 3rem 18rem;
+
+    &.active {
+      @extend %section-active;
+    }
+
+    @include media-breakpoint-down(xl) {
+      padding: 0;
+    }
+  }
 
   //&__headline {
   //
