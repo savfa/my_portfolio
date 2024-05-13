@@ -73,14 +73,14 @@
     flex-direction: column;
     flex-wrap: wrap;
     min-height: 100vh;
-    padding: 3rem 18rem;
+    padding: 3rem 14rem;
 
     &.active {
       @extend %section-active;
     }
 
     @include media-breakpoint-down(xl) {
-      padding: 0;
+      padding: 3rem 0;
     }
   }
 

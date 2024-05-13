@@ -1,0 +1,30 @@
+-
+    var works = [
+      { src: "/images/works/reestrdoma.jpg", hoverTitle: "reestrdoma.ru", hoverSources: [{ icon: "fa-github", src: "https://reestrdoma.ru/"}]},
+      { src: "/images/works/todo.jpg", hoverTitle: "todo.evgeniysavin.ru", hoverSources: [{ icon: "fa-github", src: "https://github.com/savfa/todo_list"}, { icon: "fa-github", src: "https://github.com/savfa/todo_api"}]},
+    ];
+
+mixin portfolio(src, hoverTitle, hoverSources)
+    div.portfolio__item
+        div.portfolio__image
+            img(src=src)(alt="")
+        div.portfolio__hover-items
+            h3.portfolio__hover-title=(hoverTitle)
+            div.portfolio__icons
+              each val in hoverSources
+                  a.link(href=val.src)(target="_blank")
+                      i(class="fab " + (val.icon))
+
+
+section.layout__section.portfolio#portfolio
+    include ../../_components/mainTitle/mainTitle
+    +mainTitle("мои", "работы", "портфолио")
+
+    p.portfolio__heading Мои лучшие работы, выполненные за последние несколько лет.
+
+    div.portfolio__content
+      each work in works
+        +portfolio(work.src, work.hoverTitle, work.hoverSources)
+
+
+

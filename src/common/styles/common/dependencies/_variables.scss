@@ -67,6 +67,7 @@ $color-pink-quaternary:         #dc396b;
 // theme variables
 :root {
   --color-primary: #{$color-blue-dark-primary};
+  --color-revert-primary: #{$color-white};
   --color-secondary: #{$color-blue};
   --color-tertiary: #{$color-white};
   --color-quaternary: #{$color-blue-dark-secondary};
@@ -76,6 +77,7 @@ $color-pink-quaternary:         #dc396b;
 
 .theme-lite {
   --color-primary: #{$color-white};
+  --color-revert-primary: #{$color-blue-dark-secondary};
   --color-secondary: #{#eedbbf};
   --color-tertiary: #{$color-gray-primary};
   --color-quaternary: #{$color-gray-tertiary};
