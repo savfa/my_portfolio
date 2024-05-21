@@ -1,0 +1,53 @@
+-
+    var sources = [
+        {
+            src: "/images/sources/learn-javascript.jpg",
+            title: "Современный учебник JavaScript",
+            source: "https://learn.javascript.ru",
+            showSource: "learn.javascript.ru",
+            description: "Современный учебник JavaScript, начиная с основ, включающий в себя много тонкостей и фишек JavaScript/DOM...."
+        },
+        {
+            src: "/images/sources/w3schools.jpg",
+            title: "Онлайн-руководства W3Schools",
+            source: "https://www.w3schools.com",
+            showSource: "www.w3schools.com",
+            description: "Хорошо организованные и простые для понимания руководства по веб-разработке с множеством примеров использования HTML, CSS, JavaScript и т. д."
+        },
+        {
+            src: "/images/sources/selectel.jpg",
+            title: "Что такое Git и как им пользоваться",
+            source: "https://selectel.ru/blog/tutorials/git-setup-and-common-commands",
+            showSource: "selectel.ru",
+            description: "Git — распределенная система контроля ошибок, которая помогает отслеживать историю изменений. Разбираем принципы ее работы, установки и управления репозиторием..."
+        },
+        {
+            src: "/images/sources/habr-flexbox.jpg",
+            title: "Полное руководство по Flexbox",
+            source: "https://habr.com/ru/articles/467049/",
+            showSource: "habr.com",
+            description: "Полное руководство по CSS flexbox. Это полное руководство объясняет все о flexbox, сосредотачиваясь на всех возможных свойствах для родительского элемента..."
+        },
+    ];
+
+mixin resource(src, title, source, showSource, description)
+    div.good-resources__item
+        div.good-resources__image
+            img(src=src)(alt="")
+        div.good-resources__info
+            a.link(href=source)(target="_blank")
+                h4.good-resources__title=(title)
+            p.good-resources__text=(description)
+            a.link(href=source)(target="_blank")=(showSource)
+
+
+section.layout__section.good-resources#goodResources
+    include ../../_components/mainTitle/mainTitle
+    +mainTitle("полезные", "ресурсы", "полезные ресурсы")
+
+    div.good-resources__content
+      each source in sources
+        +resource(source.src, source.title, source.source, source.showSource, source.description)
+
+
+

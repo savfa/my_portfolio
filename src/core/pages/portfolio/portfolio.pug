@@ -1,7 +1,16 @@
 -
     var works = [
-      { src: "/images/works/reestrdoma.jpg", hoverTitle: "reestrdoma.ru", hoverSources: [{ icon: "fa-github", src: "https://reestrdoma.ru/"}]},
-      { src: "/images/works/todo.jpg", hoverTitle: "todo.evgeniysavin.ru", hoverSources: [{ icon: "fa-github", src: "https://github.com/savfa/todo_list"}, { icon: "fa-github", src: "https://github.com/savfa/todo_api"}]},
+      { src: "/images/portfolio/reestrdoma.jpg", hoverTitle: "Источник проекта", hoverSources: [{ icon: "fas fa-link", src: "https://reestrdoma.ru/"}]},
+      { src: "/images/portfolio/todo.jpg", hoverTitle: "Источник проекта", hoverSources: [{ icon: "fas fa-link", src: "https://todo.evgeniysavin.ru"}, { icon: "fab fa-github", src: "https://github.com/savfa/todo_list"}, { icon: "fab fa-github", src: "https://github.com/savfa/todo_api"}]},
+      { src: "/images/portfolio/ckenergo.jpg", hoverTitle: "Источник проекта", hoverSources: [{ icon: "fas fa-link", src: "https://ckenergo.ru"}, { icon: "fab fa-github", src: "https://github.com/savfa/ckenergo.ru"}]},
+      { src: "/images/portfolio/green.jpg", hoverTitle: "Источник проекта", hoverSources: [{ icon: "fas fa-link", src: "https://savfa.github.io/green/"}, { icon: "fab fa-github", src: "https://github.com/savfa/green"}]},
+      { src: "/images/portfolio/hr-solution.jpg", hoverTitle: "Источник проекта", hoverSources: [{ icon: "fas fa-link", src: "https://hr-solution.org"}, { icon: "fab fa-github", src: "https://github.com/savfa/hr-solution.org"}]},
+      { src: "/images/portfolio/sokol-les.jpg", hoverTitle: "Источник проекта", hoverSources: [{ icon: "fas fa-link", src: "https://sokol-les.ru/"}, { icon: "fab fa-github", src: "https://github.com/savfa/sokol-les"}]},
+      { src: "/images/portfolio/lab-consulting.jpg", hoverTitle: "Источник проекта", hoverSources: [{ icon: "fas fa-link", src: "https://savfa.github.io/LAB_consulting/"}, { icon: "fab fa-github", src: "https://github.com/savfa/LAB_consulting"}]},
+      { src: "/images/portfolio/tks.jpg", hoverTitle: "Источник проекта", hoverSources: [{ icon: "fas fa-link", src: "https://savfa.github.io/TKC/"}, { icon: "fab fa-github", src: "https://github.com/savfa/TKC"}]},
+      { src: "/images/portfolio/tks-pitanie.jpg", hoverTitle: "Источник проекта", hoverSources: [{ icon: "fas fa-link", src: "https://savfa.github.io/TKC_pitanie/"}, { icon: "fab fa-github", src: "https://github.com/savfa/TKC_pitanie"}]},
+      { src: "/images/portfolio/active-live.jpg", hoverTitle: "Источник проекта", hoverSources: [{ icon: "fas fa-link", src: "https://savfa.github.io/active_live/"}, { icon: "fab fa-github", src: "https://github.com/savfa/active_live"}]},
+      { src: "/images/portfolio/business-live.jpg", hoverTitle: "Источник проекта", hoverSources: [{ icon: "fas fa-link", src: "https://savfa.github.io/business_live/"}, { icon: "fab fa-github", src: "https://github.com/savfa/business_live"}]},
     ];
 
 mixin portfolio(src, hoverTitle, hoverSources)
@@ -13,7 +22,7 @@ mixin portfolio(src, hoverTitle, hoverSources)
             div.portfolio__icons
               each val in hoverSources
                   a.link(href=val.src)(target="_blank")
-                      i(class="fab " + (val.icon))
+                      i(class=val.icon)
 
 
 section.layout__section.portfolio#portfolio
