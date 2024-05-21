@@ -1,0 +1,64 @@
+-
+    var contacts = [
+        { icon: "fas fa-map-marker-alt", iconLabel: "Расположение", contact: "г. Воронеж", isMailTo: false},
+        { icon: "fas fa-envelope", iconLabel: "Электронная почта", contact: "savfa@yandex.ru", isMailTo: true},
+        { icon: "fas fa-phone", iconLabel: "Телефон", contact: "+7 (951) 565-86-62", isMailTo: true},
+    ];
+
+-
+    var icons = [
+        {icon: "fab fa-telegram", src: "https://t.me/savfa"},
+        {icon: "fab fa-vk", src: "https://vk.com/id64907581"},
+    ];
+
+mixin contact(icon, iconLabel, contact, isMailTo)
+    div.contacts__list-item
+        div.icon
+            i(class= icon)
+            span=iconLabel
+        if isMailTo
+            p
+                a(href=`mailto:${contact.replaceAll(` `, ``).replaceAll(`-`, ``).replaceAll(`(`, ``).replaceAll(`)`, ``)}`)=(contact)
+        else
+            p=(contact)
+
+
+mixin icon(icon, src)
+    a.link(href=src)(target="_blank")
+        i(class=icon)
+
+section.layout__section.contacts#contacts
+    include ../../_components/mainTitle/mainTitle
+    +mainTitle("мои", "контакты", "контакты")
+
+    div.contacts__content-wrap
+        div.contacts__main-content
+            div.contacts__info
+                h4.contacts__info-heading Свяжитесь со мной
+                p.contacts__info-description Вы можете связаться со мной через электронную почту, телефон, социальные сети или заполнить форму обратной связи.
+                div.contacts__list
+                  each contactItem in contacts
+                      +contact(contactItem.icon, contactItem.iconLabel, contactItem.contact, contactItem.isMailTo)
+                div.contacts__icons
+                    div.contacts__icons-list
+                      each iconItem in icons
+                          +icon(iconItem.icon, iconItem.src)
+
+            div.contacts__form
+                form(action="").contact-form
+                    div.input-control.i-c-2
+                        input(type="text")(name="name")(required)(placeholder="Укажите имя")
+                        input(type="email")(name="email")(required)(placeholder="Укажите email")
+                    div.input-control
+                        input(type="text")(name="subject")(required)(placeholder="Укажите тему")
+                    div.input-control
+                        textarea(name="text")(required)(cols="15")(rows="8")(placeholder="Введите сообщение")
+
+                    include ../../_components/buttons/buttonPrimary/buttonPrimary
+                    +buttonPrimary("contactForm", "Отправить", "fas fa-envelope", "submit")
+
+
+
+
+
+

@@ -1,0 +1,152 @@
+@import "../../../common/styles/dependencies";
+
+/* ==========================================================================
+   Components -- Contacts
+   ========================================================================== */
+
+.contacts {
+  $root: &;
+
+  &__main-content {
+    @include media-breakpoint-down(lg) {
+      flex-direction: column;
+    }
+
+    display: flex;
+    gap: 2rem;
+  }
+
+  &__info {
+    @include media-breakpoint-down(xl) {
+
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+
+    &-heading {
+      margin: 0;
+      font-size: 2rem;
+      text-transform: uppercase;
+    }
+
+    &-description {
+      margin: 1rem 0;
+      line-height: 2rem;
+    }
+
+    #{$root}__list {
+      padding-bottom: 1rem;
+
+      &-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        p {
+          margin: .3rem 0 !important;
+          padding: 0 !important;
+        }
+
+        a {
+          color: inherit;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        .icon {
+          display: grid;
+          grid-template-columns: 40px 1fr;
+
+          i {
+            display: flex;
+            align-items: center;
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+
+    #{$root}__icons {
+
+      &-list {
+        display: flex;
+        margin-top: 2rem;
+
+        .link {
+          background-color: var(--color-quaternary);
+          border-radius: 50%;
+          width: 50px;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 0.5rem;
+          cursor: pointer;
+          transition: all .4s ease-in-out;
+
+
+          i {
+            font-size: 1.5rem;
+            color: var(--color-revert-primary);
+          }
+
+          &:hover {
+            background-color: var(--color-revert-primary);
+
+            i {
+              color: var(--color-primary);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__form {
+    flex: 1;
+
+    .input-control {
+      margin: 1.5rem 0;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      input, textarea {
+        border-radius: 30px;
+        font-weight: inherit;
+        font-size: inherit;
+        font-family: inherit;
+        padding: .8rem 1.1rem;
+        outline: none;
+        border: none;
+        background-color: var(--color-quaternary);
+        width: 100%;
+        color: var(--color-white);
+        resize: none;
+      }
+    }
+
+    .i-c-2 {
+      @include media-breakpoint-down(lg) {
+        flex: 1;
+        flex-wrap: wrap;
+
+        :last-child {
+          margin: 1.5rem 0 0 0 !important;
+        }
+      }
+
+      display: flex;
+
+      :last-child{
+        margin-left: 1.5rem;
+      }
+    }
+  }
+}

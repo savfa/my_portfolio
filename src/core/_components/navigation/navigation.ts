@@ -30,6 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if (activateSection) {
         activateSection.classList.add("active");
       }
+
+      // поднимаем скролл вверх
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
   });
 });
