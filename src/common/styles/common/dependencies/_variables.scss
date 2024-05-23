@@ -11,21 +11,8 @@ $color-white:        #fff;
 $color-black:        #000;
 
 // Colors Brand Scale
-$color-blue-primary:            #4A51E5;
-$color-blue-secondary:          #4349CE;
-$color-blue-tertiary:           #3C42B9;
-$color-blue-quaternary:         #363BA7;
-$color-blue-quinary:            #313596;
-$color-blue-senary:             #535BF6;
-
-$color-blue-light-primary:      #878DF2;
-$color-blue-light-secondary:    #7A7FDA;
-$color-blue-light-tertiary:     #6D72C4;
-$color-blue-light-quaternary:   #6267B0;
-$color-blue-light-quinary:      #595D9F;
-
-$color-blue-dark-primary:       #21268A;
-$color-blue-dark-secondary:     #0F1139;
+$color-blue-dark-primary:       #191d2b;
+$color-blue-dark-secondary:     #454e56;
 
 // Colors Gray Scale
 $color-gray-primary:            #8284A4;
@@ -57,6 +44,7 @@ $color-azure-secondary:         #09A8DA;
 $color-azure-tertiary:          #0897C4;
 $color-azure-quaternary:        #0788B0;
 $color-azure-quinary:           #077B9F;
+$color-blue:                    #2e3d82;
 
 $color-velvet-primary:          #AE6EE1;
 $color-velvet-secondary:        #9D63CB;
@@ -70,11 +58,32 @@ $color-red-tertiary:            #C94941;
 $color-red-quaternary:          #B5423A;
 $color-red-quinary:             #A33B34;
 
-// Mixed Colors
-$color-mixed-green-orange: linear-gradient(135deg, #00C97C 13.75%, #00C97C 50%, #FF8A00 50.11%, #FF8A00 86.25%);
-$color-mixed-green-red: linear-gradient(135deg, #00C97C 13.75%, #00C97C 50%, #F85A50 50.11%, #F85A50 86.25%);
-$color-mixed-orange-red: linear-gradient(135deg, #FF8A00 13.75%, #FF8A00 50%, #F85A50 50.11%, #F85A50 86.25%);
-$color-mixed-green-orange-red: linear-gradient(135deg, #00C97C 13.75%, #00C97C 37.33%, #FF8A00 37.35%, #FF8A00 62.65%, #F85A50 62.67%, #F85A50 86.25%);
+$color-pink-primary:            #ff548b;
+$color-pink-secondary:          #f56692;
+$color-pink-tertiary:           #e77497;
+$color-pink-quaternary:         #dc396b;
+
+
+// theme variables
+:root {
+  --color-primary: #{$color-blue-dark-primary};
+  --color-revert-primary: #{$color-white};
+  --color-secondary: #{$color-blue};
+  --color-tertiary: #{$color-white};
+  --color-quaternary: #{$color-blue-dark-secondary};
+  --color-quinary: #{$color-blue-dark-secondary};
+  --shadow: none;
+}
+
+.theme-lite {
+  --color-primary: #{$color-white};
+  --color-revert-primary: #{$color-blue-dark-secondary};
+  --color-secondary: #{#eedbbf};
+  --color-tertiary: #{$color-gray-primary};
+  --color-quaternary: #{$color-gray-tertiary};
+  --color-quinary: #{$color-blue-dark-secondary};
+  --shadow: 0 3px 15px rgba(0,0,0,.3);
+}
 
 //
 // Fonts
@@ -87,7 +96,7 @@ $secure-fonts: Arial, Helvetica, "Nimbus Sans", Sans-serif;
 $font-manrope: 'Manrope', $secure-fonts;
 
 // Font size default
-$default-font-size: 16px;
+$default-font-size: 18px;
 
 // =============================================================================
 // Variables
@@ -112,7 +121,7 @@ $enable-grid-classes: false;
 $grid-columns-12: 12;
 $grid-columns-6: 6;
 $grid-columns: $grid-columns-12;
-$grid-gutter-width: 0px;
+$grid-gutter-width: 64px;
 $grid-gutter-width-small: 0px;
 $grid-side-width: 0px;
 

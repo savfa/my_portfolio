@@ -1,0 +1,66 @@
+mixin infoAmount(amount, firstText, secondText)
+    div.about__info-amount-item
+        div.abt-text
+            p.large-text=(amount + "+")
+            p.small-text
+                |#{firstText}
+                br
+                |#{secondText}
+
+mixin progressBar(title, percent)
+    div.progress-bar
+        p.prog-title=(title)
+        div.progress-con
+            p.prog-text=(percent + "%")
+            div.progress
+                span(style=`width: ${percent}%;`)
+
+mixin timeLine(additionalClass, duration, title, subtitle, description)
+    div.timeline-item
+        div.tl-icon
+            i(class="fas " + (additionalClass))
+        p.tl-duration=(duration)
+        h5=(title)
+            span=(` - ${subtitle}`)
+        p=(description)
+
+section.layout__section.about#about
+    include ../../_components/mainTitle/mainTitle
+    +mainTitle("Обо", "мне", "навыки")
+
+    div.about__content-wrap
+        div.about__info
+            div.about__info-text
+                h4.about__info-text-heading Информация обо мне
+                p.about__info-text-description Я специализируюсь на создании пользовательских интерфейсов и веб-дизайне.
+                    |  Имею навыки в разработке веб-сайтов и веб-приложений с использованием языков программирования, таких как HTML, CSS и JavaScript.
+                    |  Владею библиотеками и фреймворками, такими как React, Angular или Vue.js, которые позволяют мне создавать динамичные и интерактивные веб-страницы.
+                    |  Кроме того, я знаком с инструментами и технологиями, такими как Git, Webpack, NPM и другими, которые помогают мне эффективно управлять проектами и оптимизировать код.
+
+                include ../../_components/buttons/buttonPrimary/buttonPrimary
+                +buttonPrimary("downloadResume", "Скачать резюме", "fas fa-download")
+
+            div.about__info-amount
+                +infoAmount(30, `завершенные`, `проекты`)
+                +infoAmount(3, `лет`, `опыта`)
+                +infoAmount(25, `довольные`, `клиенты`)
+                +infoAmount(20, `отзывы`, `клиентов`)
+
+    div.about__stats
+        div.about__content-wrap
+            h4.about__line-title Мои навыки
+            div.progress-bars
+                +progressBar("html5", 95)
+                +progressBar("css3", 90)
+                +progressBar("javascript", 85)
+                +progressBar("React JS", 90)
+                +progressBar("Redux", 95)
+                +progressBar("git", 90)
+
+    div.about__timeline
+        h4.about__line-title Мой опыт
+        div.timelines
+            +timeLine("fa-briefcase", "2021 - настоящее время", "Ведущий программист", 'ООО "Фрирайд ИТ"', "Разработка и оптимизация пользовательских интерфейсов веб-сайтов и приложений. Взаимодействие с командой дизайнеров и backend-разработчиков для обеспечения оптимальной производительности сайта.")
+            +timeLine("fa-briefcase", "2014 - 2020", "Главный специалист", 'ООО "Сеть Связной"', "Контроль выполнения стандартов мерчендайзинга. Фиксирование выявленных нарушений.")
+
+

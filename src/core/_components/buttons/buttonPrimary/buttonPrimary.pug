@@ -1,0 +1,6 @@
+mixin buttonPrimary(id, text, additionalClass, type)
+    button.button-primary(data-id=id)(type=type || "button")
+        div.button-primary__text-wrap
+            span.button-primary__text=(text)
+            span.button-primary__icon
+                i(class=additionalClass)

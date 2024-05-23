@@ -9,7 +9,7 @@
 // Unit transform
 // --------------------------------------------------------------------------
 @function px-to-rem($size, $font-size: $default-font-size) {
-  @return ($size / $font-size) * 1rem;
+  @return calc(($size / $font-size) * 1rem);
 }
 
 //

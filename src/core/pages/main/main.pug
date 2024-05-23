@@ -1,0 +1,16 @@
+div.main.active#main
+    div.main__image-wrap
+        div.main__polygon
+        div.main__image
+            img(src="/images/hero.jpg")
+    header.main__content-wrap
+        div.main__content
+            h1.main__content-name
+                | Привет, я
+                span  Савин Евгений.
+                |  Фронтенд-разработчик.
+            p.main__content-desc Приветствую Вас в моём портфолио! В качестве фронтенд-разработчика, я стремлюсь создавать интуитивно понятные и визуально привлекательные веб-сайты, сочетая технические навыки и творческий подход. Здесь вы найдёте примеры моих работ, демонстрирующих владение современными технологиями и подходами, а также способность решать сложные задачи для создания уникальных и эффективных веб-решений.
+            include ../../_components/buttons/buttonPrimary/buttonPrimary
+            +buttonPrimary("downloadResume", "Скачать резюме", "fas fa-download")
+
+

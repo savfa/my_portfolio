@@ -1,0 +1,53 @@
+@import "../../../common/styles/dependencies";
+
+/* ==========================================================================
+   Components -- navigation
+   ========================================================================== */
+
+.main-nav {
+  $root: &;
+
+  position: fixed;
+  z-index: 10;
+  top: 50%;
+  right: 3%;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-50%);
+  }
+
+  &__item {
+    padding: 1rem;
+    cursor: pointer;
+    background-color: var(--color-quinary);;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: .7rem 0;
+    box-shadow: var(--shadow) ;
+
+    i {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.2rem;
+      color: $color-white;
+      pointer-events: none;
+    }
+
+    &.active {
+      background-color: var(--color-secondary);
+      transition: all .4s ease-in-out;
+      i {
+        //color: var(--color-quinary);
+      }
+    }
+  }
+}
