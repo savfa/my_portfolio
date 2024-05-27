@@ -1,8 +1,8 @@
 -
     var contacts = [
-        { icon: "fas fa-map-marker-alt", iconLabel: "Расположение", contact: "г. Воронеж", isMailTo: false},
-        { icon: "fas fa-envelope", iconLabel: "Электронная почта", contact: "savfa@yandex.ru", isMailTo: true},
-        { icon: "fas fa-phone", iconLabel: "Телефон", contact: "+7 (951) 565-86-62", isMailTo: true},
+        { icon: "fas fa-map-marker-alt", iconLabel: "Расположение", contact: "г. Воронеж", isMail: false, isPhone: false},
+        { icon: "fas fa-envelope", iconLabel: "Электронная почта", contact: "savfa@yandex.ru", isMail: true, isPhone: false},
+        { icon: "fas fa-phone", iconLabel: "Телефон", contact: "+7 (951) 565-86-62", isMail: false, isPhone: true},
     ];
 
 -
@@ -11,14 +11,14 @@
         {icon: "fab fa-vk", src: "https://vk.com/id64907581"},
     ];
 
-mixin contact(icon, iconLabel, contact, isMailTo)
+mixin contact(icon, iconLabel, contact, isMail, isPhone)
     div.contacts__list-item
         div.icon
             i(class= icon)
             span=iconLabel
-        if isMailTo
+        if (isMail || isPhone)
             p
-                a(href=`mailto:${contact.replaceAll(` `, ``).replaceAll(`-`, ``).replaceAll(`(`, ``).replaceAll(`)`, ``)}`)=(contact)
+                a(href=`${(isMail && `mailto`) || (isPhone && `tel`)}:${contact.replaceAll(` `, ``).replaceAll(`-`, ``).replaceAll(`(`, ``).replaceAll(`)`, ``)}`)=(contact)
         else
             p=(contact)
 
@@ -38,7 +38,7 @@ section.layout__section.contacts#contacts
                 p.contacts__info-description Вы можете связаться со мной через электронную почту, телефон, социальные сети или заполнить форму обратной связи.
                 div.contacts__list
                   each contactItem in contacts
-                      +contact(contactItem.icon, contactItem.iconLabel, contactItem.contact, contactItem.isMailTo)
+                      +contact(contactItem.icon, contactItem.iconLabel, contactItem.contact, contactItem.isMail, contactItem.isPhone)
                 div.contacts__icons
                     div.contacts__icons-list
                       each iconItem in icons
